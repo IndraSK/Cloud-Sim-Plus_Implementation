@@ -1,7 +1,7 @@
 package Simulations
 
 import com.typesafe.config.ConfigFactory
-import org.cloudbus.cloudsim.allocationpolicies.{VmAllocationPolicyBestFit, VmAllocationPolicyFirstFit}
+import org.cloudbus.cloudsim.allocationpolicies.{VmAllocationPolicyBestFit, VmAllocationPolicySimple}
 import org.cloudbus.cloudsim.cloudlets.Cloudlet
 import org.cloudbus.cloudsim.core.CloudSim
 import org.cloudbus.cloudsim.hosts.Host
@@ -50,7 +50,7 @@ object Simulation4 extends App {
   logger.info("Creating Datacenter")
   val dc0_temp: Datacenterconfig = new Datacenterconfig(simulation = "simulation4", model = "Simulations")
   //var dc0 = helper.createSimpleDc(dc0_temp, cloudsim, hostList.asJava, new VmAllocationPolicyBestFit)
-  val dc0 = helper.createNetworkDc(dc0_temp, cloudsim,hostList.asJava, new VmAllocationPolicyFirstFit)
+  val dc0 = helper.createNetworkDc(dc0_temp, cloudsim,hostList.asJava, new VmAllocationPolicySimple)
 
   //Network Topology
   val topology = "topology.brite"
