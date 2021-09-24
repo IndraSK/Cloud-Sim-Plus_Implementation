@@ -405,6 +405,9 @@ Cloudlet|Status |DC|Host|Host PEs |VM|VM PEs   |CloudletLen|CloudletPEs|StartTim
 #### Observations for MixedSimulation:
 
 -As expected from the pricing criteria defined, the IaaS service costs the highest followed by the PaaS and SaaS service.
+
 -The Vm Allocation and Scheduling policy used in this case is similar to ones used in General Simulations.
+
 -For IAAS the customer can indicate their own vm specs which is finished by inspiring the specs from the client.
+
 -For PAAS the customer can indicate the workplace specs which is finished by evoking the specs from the client.
