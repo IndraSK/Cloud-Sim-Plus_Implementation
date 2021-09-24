@@ -21,11 +21,10 @@ object Simulation1 extends App {
   logger.info("Starting Simulation 1")
 
   //Accessing the config files
-  val conf = ConfigFactory.load("Simulations")
+  val config = ConfigFactory.load("Simulations")
 
 
   //Creates a CloudSim object to initialize the simulation.
-  logger.info("Instantiating Cloudsim")
   val cloudsim = new CloudSim
 
   //creating an instance of DataCenterHelper
@@ -36,18 +35,18 @@ object Simulation1 extends App {
   logger.info("Creating Broker")
   val broker = helper.createBroker(cloudsim)
 
-  //Getting number of vm, host and cloudlets from config files
-  var numVms = conf.getInt("simulation1.vm.numberofvm")
-  var numHosts = conf.getInt("simulation1.host.numberofhost")
-  var numcl = conf.getInt("simulation1.cloudLet.numberofCL")
+  //accessing values of Vm,Host and Cloudlets from config
+  var noVms = config.getInt("simulation1.vm.numberofvm")
+  var nohosts = config.getInt("simulation1.host.numberofhost")
+  var nocl = config.getInt("simulation1.cloudLet.numberofCL")
 
 
-  //Creating Host
+  //Host Creation
   logger.info("Creating host")
   val hosttemp: Hostconfig = new Hostconfig(simulation = "simulation1", model = "Simulations")
-  val hostList: List[Host] = List.tabulate(numHosts)(i => helper.createHost(hosttemp, new VmSchedulerTimeShared))
+  val hostList: List[Host] = List.tabulate(nohosts)(i => helper.createHost(hosttemp, new VmSchedulerTimeShared))
 
-  //Creates a Datacenter with a list of Hosts.
+  //Creates a Datacenter
   //Uses a VmAllocationPolicyWorstFit for Vm Allocation
   logger.info("Creating Datacenter")
   val dc0_temp: Datacenterconfig = new Datacenterconfig(simulation = "simulation1", model = "Simulations")
@@ -59,15 +58,15 @@ object Simulation1 extends App {
 
 
   logger.info("Creating Vm and Cloulets")
-  //Creates VMs to run applications.
-  val vmtemp: Vmconfig = new Vmconfig(simulation = "simulation1", model = "Simulations")
-  val vmList: List[Vm] = List.tabulate(numVms)(i => helper.createVms(vmtemp))
+  //Creates VMs
+  val vm: Vmconfig = new Vmconfig(simulation = "simulation1", model = "Simulations")
+  val vmList: List[Vm] = List.tabulate(noVms)(i => helper.createVms(vm))
 
   //Creating cloudlets variable and list and calling createCloudlets()
-  val cltemp: Cloudletconfig = new Cloudletconfig(simulation = "simulation1", model = "Simulations")
-  val cloudlets: List[Cloudlet] = List.tabulate(numcl)(i => helper.createCloudLets(cltemp))
+  val cl: Cloudletconfig = new Cloudletconfig(simulation = "simulation1", model = "Simulations")
+  val cloudlets: List[Cloudlet] = List.tabulate(nocl)(i => helper.createCloudLets(cl))
 
-  //submitting vmlist and cloudletlist to broker.
+  //submitting Vms and cloudlets to broker.
   logger.info("Submitting List of Vms and Cloudlets to broker.")
   broker.submitVmList(vmList.asJava)
   broker.submitCloudletList(cloudlets.asJava)
@@ -75,7 +74,7 @@ object Simulation1 extends App {
   //starting cloudsim
   cloudsim.start
 
-  //printing status for the simluation.
+  //printing status for the Simluation
   logger.info("Printing the simulation result!")
   new CloudletsTableBuilder(broker.getCloudletFinishedList).build()
 

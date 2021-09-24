@@ -35,7 +35,7 @@ object Simulation2 extends App {
   logger.info("Creating Broker")
   val broker = helper.createBroker(cloudsim)
 
-  //Getting number of vm, host and cloudlets from config files
+  //accessing values of Vm,Host and Cloudlets from config
   var numVms = conf.getInt("simulation2.vm.numberofvm")
   var numHosts = conf.getInt("simulation2.host.numberofhost")
   var numcl = conf.getInt("simulation2.cloudLet.numberofCL")
@@ -46,8 +46,8 @@ object Simulation2 extends App {
   val hosttemp: Hostconfig = new Hostconfig(simulation = "simulation2", model = "Simulations")
   val hostList: List[Host] = List.tabulate(numHosts)(i => helper.createHost(hosttemp, new VmSchedulerSpaceShared))
 
-  //Creates a Datacenter with a list of Hosts.
-  //Uses a VmAllocationPolicyRoundRobin to allocate VMs
+  //Creates a Datacenter
+  //Uses a VmAllocationPolicyRoundRobin to allocate Vms
   logger.info("Creating Datacenter")
   val dc0_temp: Datacenterconfig = new Datacenterconfig(simulation = "simulation2", model = "Simulations")
   var dc0 = helper.createSimpleDc(dc0_temp, cloudsim, hostList.asJava, new VmAllocationPolicyRoundRobin)
@@ -59,7 +59,7 @@ object Simulation2 extends App {
 
 
   logger.info("Creating Vm and Cloulets")
-  //Creates VMs to run applications.
+  //Creates VMs
   val vmtemp: Vmconfig = new Vmconfig(simulation = "simulation2", model = "Simulations")
   val vmList: List[Vm] = List.tabulate(numVms)(i => helper.createVms(vmtemp))
 
@@ -68,7 +68,7 @@ object Simulation2 extends App {
   val cloudlets: List[Cloudlet] = List.tabulate(numcl)(i => helper.createCloudLets(cltemp))
 
 
-  //submitting vmlist and cloudletlist to broker.
+  //submitting Vms and cloudlets to broker.
   logger.info("Submitting List of Vms and Cloudlets to broker.")
   broker.submitVmList(vmList.asJava)
   broker.submitCloudletList(cloudlets.asJava)
@@ -76,7 +76,7 @@ object Simulation2 extends App {
   //starting cloudsim
   cloudsim.start
 
-  //printing status for the simluation.
+  //printing status for the simluation
   logger.info("Printing the simulation result!")
   new CloudletsTableBuilder(broker.getCloudletFinishedList).build()
 
