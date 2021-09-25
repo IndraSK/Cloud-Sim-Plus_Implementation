@@ -12,7 +12,7 @@ Clone the project
 
 
 ### Using cmd :
-1. Navigate to folder: ```cloudsimplusimplementation ```
+1. Navigate to folder: ```Cloud-Sim-Plus_Implementation ```
 2. Run the command: ```sbt clean compile run``` where you can choose the corresponding Simulation from a List of Simulations to run
 3. Run the command: ```sbt clean compile test``` to run the Test cases
 
