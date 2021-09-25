@@ -7,7 +7,7 @@
 
 Clone the project
 
-```git clone https://IndraSK@bitbucket.org/IndraSK/cloudsimplusimplementation.git```
+```git clone https://github.com/IndraSK/Cloud-Sim-Plus_Implementation.git```
 
 
 
