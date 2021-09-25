@@ -26,14 +26,14 @@ object MixedSimulation extends App {
   //accessing the config files
   val conf = ConfigFactory.load("MixedSimulations")
 
-  //Creates a CloudSim object to initialize the simulation.
+  //Creates a CloudSim object
   logger.info("Instantiating Cloudsim")
   val cloudsim = new CloudSim
 
   val helper: Datacenterhelper = new Datacenterhelper
 
 
-  /*Creates a Broker that will act on behalf of a cloud user (customer). The Broker assigns cloudlet to the service related DataCenter*/
+  /*Creates a Broker */
   logger.info("Creating Broker")
   val broker = helper.createBroker(cloudsim)
 
@@ -52,7 +52,7 @@ object MixedSimulation extends App {
   //printing status for the simluation.
   logger.info("Printing the simulation result!")
   new CloudletsTableBuilder(broker.getCloudletFinishedList).build()
-  logger.info("Overall Cost for this IAAS simulation - " + cloudlets_iaas.map(helper.overallCost).sum)
-  logger.info("Overall Cost for this  PAAS simulation - " + cloudlets_paas.map(helper.overallCost).sum)
-  logger.info("Overall Cost for this SAAS simulation - " + cloudlets_saas.map(helper.overallCost).sum)
+  logger.info("Cost for this IAAS simulation - " + cloudlets_iaas.map(helper.overallCost).sum)
+  logger.info("Cost for this  PAAS simulation - " + cloudlets_paas.map(helper.overallCost).sum)
+  logger.info("Cost for this SAAS simulation - " + cloudlets_saas.map(helper.overallCost).sum)
 }

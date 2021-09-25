@@ -33,9 +33,9 @@ VmAllocationPolicySimple: A VmAllocationPolicy execution that picks, as the host
 VmAllocationPolicyRoundRobin: Tracks down the following Host having reasonable assets to put a given VM circularly. That implies when it chooses a reasonable Host to put a VM, it moves to the following appropriate Host when another VM must be put. 
 
 ## VM Scheduling Policies Checked
-VmSchedulerSpaceShared: VmSchedulerSpaceShared is a VMM designation strategy that allots at least one Pe to a VM, and doesn't permit sharing of PEs. In case there is no free PEs to the VM, designation falls flat.
+VmSchedulerSpaceShared: VmSchedulerSpaceShared is a designation strategy that allots at least one Pe to a VM, and doesn't permit sharing of PEs. In case there is no free PEs to the VM, designation falls flat.
 
-VmSchedulerTimeShared: VmSchedulerTimeShared is a VMM designation strategy that allots at least one Pe to a VM, and permits sharing of PEs by various VMs.
+VmSchedulerTimeShared: VmSchedulerTimeShared is a designation strategy that allots at least one Pe to a VM, and permits sharing of PEs by various VMs.
 
 ## Cloudlet Utilization checked
 Utilization: [Full, Dynamic]
@@ -329,8 +329,7 @@ Database - MYSQL
 
 ### Results of MixedSimulation:
 ```
-
-                                         SIMULATION RESULTS
+                                    SIMULATION RESULTS
 
 Cloudlet|Status |DC|Host|Host PEs |VM|VM PEs   |CloudletLen|CloudletPEs|StartTime|FinishTime|ExecTime
       ID|       |ID|  ID|CPU cores|ID|CPU cores|         MI|  CPU cores|  Seconds|   Seconds| Seconds
@@ -396,10 +395,9 @@ Cloudlet|Status |DC|Host|Host PEs |VM|VM PEs   |CloudletLen|CloudletPEs|StartTim
       53|SUCCESS| 4|   1|        2| 5|        2|     300000|          8|        0|     24000|   24000
       59|SUCCESS| 4|   1|        2| 5|        2|     300000|          8|        0|     24000|   24000
 -----------------------------------------------------------------------------------------------------
-17:57:46.243 [main] INFO  MixedSimulations.MixedSimulation$ - Overall Cost for this IAAS simulation - 84000.175
-17:57:46.244 [main] INFO  MixedSimulations.MixedSimulation$ - Overall Cost for this  PAAS simulation - 79680.16600000001
-17:57:46.244 [main] INFO  MixedSimulations.MixedSimulation$ - Overall Cost for this SAAS simulation - 76320.159
-
+18:59:27.810 [main] INFO  MixedSimulations.MixedSimulation$ - Cost for this IAAS simulation - 84000.175
+18:59:27.811 [main] INFO  MixedSimulations.MixedSimulation$ - Cost for this  PAAS simulation - 79680.16600000001
+18:59:27.811 [main] INFO  MixedSimulations.MixedSimulation$ - Cost for this SAAS simulation - 76320.159
 ```
 
 #### Observations for MixedSimulation:
