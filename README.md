@@ -7,14 +7,14 @@
 
 Clone the project
 
-```-------------------------------------------```
+```git clone https://IndraSK@bitbucket.org/IndraSK/cloudsimplusimplementation.git```
 
 
 
 ### Using cmd :
-1. Navigate to cd --------------- .
-2. Run the command: ```sbt clean compile run``` where you can choose the corresponding Simulation from a List of Simulations to run.
-3. Run the command: ```sbt clean compile test``` to run the Test cases
+1.Navigate to folder: ```cloudsimplusimplementation ```
+2.Run the command: ```sbt clean compile run``` where you can choose the corresponding Simulation from a List of Simulations to run.
+3.Run the command: ```sbt clean compile test``` to run the Test cases
 
 
 ### Using Intellij:
