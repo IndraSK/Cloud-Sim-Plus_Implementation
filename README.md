@@ -12,9 +12,9 @@ Clone the project
 
 
 ### Using cmd :
-1.Navigate to folder: ```cloudsimplusimplementation ```.
-2.Run the command: ```sbt clean compile run``` where you can choose the corresponding Simulation from a List of Simulations to run.
-3.Run the command: ```sbt clean compile test``` to run the Test cases
+1. Navigate to folder: ```cloudsimplusimplementation ```
+2. Run the command: ```sbt clean compile run``` where you can choose the corresponding Simulation from a List of Simulations to run
+3. Run the command: ```sbt clean compile test``` to run the Test cases
 
 
 ### Using Intellij:
@@ -405,10 +405,7 @@ Cloudlet|Status |DC|Host|Host PEs |VM|VM PEs   |CloudletLen|CloudletPEs|StartTim
 
 #### Observations for MixedSimulation:
 
--As expected from the pricing criteria defined, the IaaS service costs the highest followed by the PaaS and SaaS service.
-
--The Vm Allocation and Scheduling policy used in this case is similar to ones used in General Simulations.
-
--For IAAS the customer can indicate their own vm specs which is finished by inspiring the specs from the client.
-
--For PAAS the customer can indicate the workplace specs which is finished by evoking the specs from the client.
+1. As expected from the pricing criteria defined, the IaaS service costs the highest followed by the PaaS and SaaS service.
+2. The Vm Allocation and Scheduling policy used in this case is similar to ones used in General Simulations.
+3. For IAAS the customer can indicate their own vm specs which is finished by inspiring the specs from the client.
+4. For PAAS the customer can indicate the workplace specs which is finished by evoking the specs from the client.
