@@ -1,6 +1,7 @@
 # CS 441 : HW1 : 
-### Indra Sai Kiran Valluru 
-### UIN - 652537989
+### Indra Sai Kiran Valluru [UIN - 652537989]
+
+
 ##Description : Create cloud simulators in Scala for evaluating executions of applications in cloud datacenters with different characteristics and deployment models.
 # Instructions to run the simulations
 
