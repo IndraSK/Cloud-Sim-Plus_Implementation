@@ -301,7 +301,7 @@ Cloudlet|Status |DC|Host|Host PEs |VM|VM PEs   |CloudletLen|CloudletPEs|StartTim
 ```
 
 #### Observations:
-1. It is found in reproductions the general expense, execution, finish and start time doesn't change definitely based on VmAllocationPolicy, VmScheduler strategy the vast majority of the occasions it stays same.
+1. It is found in simulations the general expense, execution, finish and start time doesn't change definitely based on VmAllocationPolicy, VmScheduler strategy the vast majority of the occasions it stays same.
 2. However changing the quantities [no. of Hosts, no. of VMS, no. of Cloudlets] in the config records definitely changes the general expense, execution, finish and start time.
 3. Changing the usage model sort from dynamic to full changes the general expense, execution, finish and start time.
 4. VmAllocationPolicyWorstFit & VmAllocationPolicySimple are similar as they are based on the worst fit policy which utilizes the least number of PEs in use and most available PEs respectively. VmAllocationPolicyBestFit policy utilizes the most number of PEs in use to allocate.
